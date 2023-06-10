@@ -26,7 +26,6 @@ class MainHomeWidget extends StatefulWidget {
 }
 
 class _MainHomeWidgetState extends State<MainHomeWidget> {
-  bool _isLoading = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,9 +65,6 @@ class _MainHomeWidgetState extends State<MainHomeWidget> {
               width: 180,
               child: ElevatedButton(
                 onPressed: () {
-                  setState(() {
-                    _futureAlbum = deleteAlbum(snapshot.data!.id.toString());
-                  });
                   Navigator.push(
                     context,
                     MaterialPageRoute(
