@@ -56,3 +56,5 @@ Future<UpdateDetail> updateAlbum(String id, UpdateDetail updateDetail) async {
     throw Exception('Failed to update album.');
   }
 }
+
+//Delete Method
