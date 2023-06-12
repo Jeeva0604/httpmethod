@@ -18,7 +18,6 @@ class _GetHomePageWidget extends State<GetHomePageWidget> {
   @override
   void initState() {
     super.initState();
-
     fetchUsers("1").then((value) {
       print(value);
       setState(() {
