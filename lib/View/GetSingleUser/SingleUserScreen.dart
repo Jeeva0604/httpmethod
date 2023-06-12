@@ -28,6 +28,26 @@ class _SingleUserHomeWidget extends State<SingleUserHomeWidget> {
 
   @override
   Widget build(BuildContext context) {
+    List<Widget> list = [];
+
+    if (response != null) {
+      list = [
+        Image.network(response!.data!.avatar!),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Text(
+              response!.data!.firstName!,
+              style: const TextStyle(fontSize: 30),
+            ),
+            Text(
+              response!.data!.lastName!,
+              style: const TextStyle(fontSize: 30),
+            )
+          ],
+        ),
+      ];
+    }
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
@@ -36,22 +56,7 @@ class _SingleUserHomeWidget extends State<SingleUserHomeWidget> {
         child: Card(
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Image.network(response!.data!.avatar!),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Text(
-                    response!.data!.firstName!,
-                    style: const TextStyle(fontSize: 30),
-                  ),
-                  Text(
-                    response!.data!.lastName!,
-                    style: const TextStyle(fontSize: 30),
-                  )
-                ],
-              ),
-            ],
+            children: list,
           ),
         ),
       ),

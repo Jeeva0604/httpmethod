@@ -5,9 +5,9 @@ class UserCreateBody {
   UserCreateBody({this.name, this.job});
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
-    data['name'] = this.name;
-    data['job'] = this.job;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['name'] = name;
+    data['job'] = job;
     return data;
   }
 }
@@ -28,11 +28,11 @@ class UserCreateResponse {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
-    data['name'] = this.name;
-    data['job'] = this.job;
-    data['id'] = this.id;
-    data['createdAt'] = this.createdAt;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['name'] = name;
+    data['job'] = job;
+    data['id'] = id;
+    data['createdAt'] = createdAt;
     return data;
   }
 }
